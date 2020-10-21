@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.ReserverCovPage">
+    
+    <StackLayout>
+
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="20,20,20,20">
+
+            <Image Source="http://localhost/CovCov/img-services_covoiturage.png" HeightRequest="70" VerticalOptions="EndAndExpand"/>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Départ : "   FontSize="16" />
+                <Label Text="{Binding Covoiturage.Depart }"   FontSize="16" /></StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Arrivée : "   FontSize="16" />
+                <Label Text="{Binding Covoiturage.Arrivee }" FontSize="16"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nombre de places : "   FontSize="16" />
+                <Label Text="{Binding Covoiturage.Nombre_de_place}"  FontSize="16"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Date : "   FontSize="16" />
+                <Label Text="{Binding Covoiturage.Date }" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Horaire : "   FontSize="16" />
+                <Label Text="{Binding Covoiturage.Horaire}" />
+            </StackLayout>
+
+
+
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="20,20,20,20">
+                <Button Command="{Binding ReserveCommand}" Clicked="EnvoyerMail"
+                Text="Reserver" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start"/>
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

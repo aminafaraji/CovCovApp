@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App1.ViewModels"
+             x:Class="App1.Views.CovoituregePage"
+             Title="All Covoiturage">
+
+    <ContentPage.BindingContext>
+        <viewModels:CovoituragesViewModels />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout"
+                     Command="{Binding LogoutCommand}"
+                     Clicked="LogoutMenuItem_Clicked"
+                     Priority="1"/>
+    </ContentPage.ToolbarItems>
+
+
+
+    <StackLayout>
+
+      <!--  <Entry Text="{Binding AccessToken}" />  -->
+
+        <Button Command="{Binding GetCovoiturage}"
+                Text="Get All Covoiturage"
+                TextColor="White"
+                FontSize="30"
+                BackgroundColor="DodgerBlue"/>
+
+
+        <Button Text="Add new Idea"
+                Clicked="NavigateToAddNewIdea_Clicked"
+                TextColor="White"
+                FontSize="30"
+                BackgroundColor="DeepPink"/>
+
+        <Button Text="Search Ideas"
+                Clicked="NavigateToSearchCov_Clicked"
+                TextColor="White"
+                FontSize="30"
+                BackgroundColor="ForestGreen"/>
+
+
+        <ListView ItemsSource="{Binding Covoiturage}"
+                  HasUnevenRows="True"
+                  ItemTapped="IdeasListView_ItemTapped">
+            <!--  ItemTapped="IdeasListView_ItemTapped" > -->
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="0,10">
+                            
+                            <Label Text="{Binding Depart}" 
+                                   FontSize="24"
+                                   TextColor="RoyalBlue"/>
+
+                            <Label  Text="{Binding Arrivee}" />
+
+                            <Label Text="{Binding Date}" />
+
+                            <Label Text="{Binding Nombre_de_place}" />
+
+                            <Label Text="{Binding Horaire}" />
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App1.ViewModels"
+             x:Class="App1.Views.CovCuUser"
+             Title="Mes Covoiturage">
+    
+    <ContentPage.BindingContext>
+        <viewModels:CovoiturageCuurentUser />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout"
+                     Command="{Binding LogoutCommand}"
+                     Clicked="LogoutMenuItem_Clicked"
+                     Priority="1"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+
+        <Button Command="{Binding GetCovoiturage}" Text="Mes Covoiturage" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start"/>
+
+        <ListView ItemsSource="{Binding Cov}"
+                  HasUnevenRows="True"
+                  ItemTapped="CovListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="0,10">
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Départ : " TextColor="RoyalBlue"/>
+                                <Label Text="{Binding Depart}" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Arrivée : " TextColor="RoyalBlue"/>
+                                <Label  Text="{Binding  Arrivee}" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Date : " TextColor="RoyalBlue"/>
+                                <Label Text="{Binding Date}" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Nombre de place : " TextColor="RoyalBlue"/>
+                                <Label Text="{Binding Nombre_de_place}" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Horaire : " TextColor="RoyalBlue"/>
+                                <Label Text="{Binding Horaire}" />
+                            </StackLayout>
+
+                          
+
+                            <Label Text="Pour Modifier le covoiturage Tap Ici>>>" TextDecorations="Underline" TextColor="#3897f0" />
+                            
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+    
+    
+    
+    
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App1.ViewModels"
+             x:Class="App1.Views.DemCreeCovPage">
+
+
+    <ContentPage.BindingContext>
+        <viewModels:CovoiturageCuurentUser />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout"
+                     Command="{Binding LogoutCommand}"
+                     Clicked="LogoutMenuItem_Clicked"
+                     Priority="1"/>
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout VerticalOptions="Center" Spacing="50">
+
+            
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                <Button  Text="Demander Covoiturage" BorderRadius="22" TextColor="#ffffff" BackgroundColor="DeepSkyBlue" Clicked="NavigateToSearchCov_Clicked"/>
+                <Image Source="http://localhost/CovCov/DemCov2.jpg" WidthRequest="300" HeightRequest="500" />
+
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                <Button Text="Proposer Covoiturage" BorderRadius="22" TextColor="#ffffff" BackgroundColor="DeepSkyBlue" Clicked="NavigateAddNewCovCov_Clicked"/>
+                <Image Source="http://localhost/CovCov/CreCov2.jpg" WidthRequest="300" HeightRequest="500"/>
+
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+
+    </StackLayout>
+
+
+
+
+    
+</ContentPage>

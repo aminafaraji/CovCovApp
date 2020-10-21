@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App1.ViewModels"
+             x:Class="App1.Views.EditCovPage">
+
+    
+
+    <StackLayout>
+
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="20,20,20,20">
+            <Entry Text="{Binding Covoiturage.Depart }" Placeholder="Depart" PlaceholderColor="#bababa" FontSize="16" />
+            <Entry Text="{Binding Covoiturage.Arrivee }" Placeholder="Arrivee" PlaceholderColor="#bababa" FontSize="16"/>
+            <Entry Text="{Binding Covoiturage.Nombre_de_place}" Placeholder="nombre de place" PlaceholderColor="#bababa" FontSize="16"/>
+            <Label Text="Date de depart:" TextColor="#bababa" />
+            <Entry Text="{Binding Covoiturage.Date }" />
+            <Label Text="Horaire:" TextColor="#bababa" />
+            <Entry Text="{Binding Covoiturage.Horaire}" />
+
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="20,20,20,20">
+                <Button Command="{Binding EditCommand}"
+                Text="Modifier Covoiturage" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start"/>
+
+                <Button Command="{Binding DeleteCommand}"
+                Text="Supprimer Covoiturage" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start"/>
+               
+                <Button
+                Text="Mon Localisation" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Clicked="ToMap"/>
+
+            </StackLayout>
+      </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

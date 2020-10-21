@@ -1,0 +1,1 @@
+C:\Users\user\source\repos\TEST\App1\App1.UWP\App1.UWP.csproj;x86
